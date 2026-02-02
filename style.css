@@ -1,0 +1,468 @@
+:root{
+  --bg1:#eef3fb;
+  --bg2:#ffffff;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e5e7eb;
+  --blue:#2f7df6;
+  --blue2:#1f6ae6;
+  --shadow: 0 10px 25px rgba(15,23,42,.08);
+  --r:22px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial;
+  background: linear-gradient(180deg, var(--bg1), #f7f9ff 50%, #ffffff);
+  color:var(--text);
+}
+
+/* Topbar */
+.topbar{
+  position: sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--border);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width: 0;
+}
+.brandLogo{
+  width:44px; height:44px;
+  border-radius:16px;
+  object-fit:cover;
+  border:1px solid var(--border);
+  background:#fff;
+}
+.brandText{min-width:0}
+.brandName{
+  font-weight:800;
+  font-size:18px;
+  line-height:1.1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.brandWelcome{
+  font-size:12px;
+  color:var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.iconBtn{
+  width:44px;height:44px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  cursor:pointer;
+}
+.pillBtn{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* Search row */
+.searchRow{
+  display:flex;
+  gap:10px;
+  padding:10px 12px;
+  align-items:center;
+}
+.search{
+  flex:1;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:999px;
+  padding:12px 14px;
+  outline:none;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+}
+.select{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:999px;
+  padding:12px 14px;
+  outline:none;
+  cursor:pointer;
+  min-width:120px;
+}
+
+/* Container */
+.container{
+  padding: 4px 12px 22px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Heads */
+.head{
+  padding: 8px 2px 4px;
+}
+.head h2{
+  margin:0;
+  font-size:22px;
+  letter-spacing:.2px;
+}
+.head p{
+  margin:4px 0 0;
+  color:var(--muted);
+}
+.headRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.ghostBtn{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:14px;
+  padding:10px 14px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.metaRow{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:6px 2px 10px;
+}
+.count{
+  color:var(--muted);
+  font-weight:700;
+}
+
+/* Grid: always 2 columns on mobile like your screenshot */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:12px;
+  padding:10px 0 14px;
+}
+
+/* Card */
+.card{
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+
+.cardMedia{
+  width:100%;
+  height: 150px;
+  background:#f3f6ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.cardMedia img{
+  width:100%;
+  height:100%;
+  object-fit: contain; /* IMPORTANT: show full image */
+}
+
+.cardBody{
+  padding:12px 12px 14px;
+  text-align:center;
+}
+.cardTitle{
+  font-weight:900;
+  font-size:16px;
+  margin:0;
+}
+.cardDesc{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-weight:700;
+  font-size:13px;
+  line-height:1.3;
+}
+.btnPrimary{
+  margin-top:12px;
+  width:100%;
+  border:none;
+  border-radius: 999px;
+  padding:12px 12px;
+  background: var(--blue);
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
+.btnPrimary:active{ background: var(--blue2); }
+
+/* Product Card */
+.pRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:10px;
+}
+.price{
+  font-weight:900;
+  color:var(--blue2);
+  font-size:16px;
+}
+.small{
+  color:var(--muted);
+  font-weight:700;
+  font-size:12px;
+}
+
+.qtyRow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:10px;
+}
+.qtyBtn{
+  width:46px;height:46px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:#fff;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:900;
+}
+.qtyNum{
+  min-width:28px;
+  text-align:center;
+  font-weight:900;
+}
+
+.input{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px 12px;
+  outline:none;
+  margin-top:10px;
+}
+
+/* Favorite heart */
+.favBtn{
+  position:absolute;
+  top:10px;
+  left:10px; /* visible on card top-left */
+  width:42px;height:42px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.9);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+.favBtn.on{ color:#ef4444; }
+
+/* Empty / History */
+.empty{
+  background:#fff;
+  border:1px dashed var(--border);
+  padding:14px;
+  border-radius:16px;
+  text-align:center;
+  color:var(--muted);
+  font-weight:800;
+}
+.history{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:10px 0;
+}
+.hItem{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow: var(--shadow);
+  padding:10px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.hName{ font-weight:900; }
+.hMeta{ color:var(--muted); font-weight:700; font-size:12px; }
+
+/* Side menu */
+.backdrop{
+  position:fixed; inset:0;
+  background: rgba(0,0,0,.35);
+  z-index:20;
+}
+.sideMenu{
+  position:fixed;
+  top:0; left:0; bottom:0;
+  width: 280px;
+  background:#fff;
+  z-index:30;
+  border-right:1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  display:flex;
+  flex-direction:column;
+}
+.sideTop{
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border-bottom:1px solid var(--border);
+}
+.sideBrand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sideLogo{
+  width:42px;height:42px;
+  border-radius:16px;
+  object-fit:cover;
+  border:1px solid var(--border);
+}
+.sideTitle{ font-weight:900; }
+.sideSub{ color:var(--muted); font-weight:700; font-size:12px; }
+
+.sideNav{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.sideLink{
+  width:100%;
+  text-align:right;
+  padding:12px 12px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:16px;
+  font-weight:900;
+  cursor:pointer;
+}
+.sideLinkA{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:flex-start;
+  text-decoration:none;
+  color:inherit;
+}
+.sideIcon{ width:22px; height:22px; object-fit:contain; }
+
+.hidden{ display:none !important; }
+
+/* Toast */
+.toastWrap{
+  position:fixed;
+  bottom:14px;
+  left:14px;
+  z-index:60;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.toast{
+  background:#0b1220;
+  color:#fff;
+  border-radius:16px;
+  padding:10px 12px;
+  width: 230px;
+  box-shadow: 0 18px 30px rgba(0,0,0,.25);
+}
+.toastTitle{ font-weight:900; }
+.toastMsg{ opacity:.9; font-size:12px; margin-top:2px; }
+
+/* Small screens */
+@media (max-width:360px){
+  .brandWelcome{ display:none; }
+  .grid{ gap:10px; }
+  .cardMedia{ height:140px; }
+}/* منع الحركة والاهتزاز + منع سكرول أفقي */
+html, body{
+  overflow-x: hidden !important;
+}
+
+*{
+  max-width: 100%;
+}
+
+/* (اختياري) إذا كان كاين انتقالات/أنيميشن تسبب حركة */
+*,
+*::before,
+*::after{
+  transition: none !important;
+  animation: none !important;
+  scroll-behavior: auto !important;
+}/* جعل كل كروت الأقسام في نفس السطر */
+.sections,
+.sections-container,
+.cards,
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}/* خلي كل كارد في الأقسام نفس الارتفاع */
+.sectionCard,
+.section-card,
+.homeCard,
+.home-card,
+.card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}/* توحيد ارتفاع الكارد */
+.card{
+  display: flex;
+  flex-direction: column;
+}
+
+/* محتوى الكارد */
+.cardBody{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* زر دخول */
+.cardBody .btn,
+.cardBody button{
+  margin-top: auto;   /* يخلي الزر ينزل لتحت */
+}
+
+/* نزول بسيط إضافي (اختياري) */
+.cardBody .btn{
+  margin-top: 14px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zex7 Store</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Backdrop -->
+  <div id="backdrop" class="backdrop hidden"></div>
+
+  <!-- Side Menu (LEFT) -->
+  <aside id="sideMenu" class="sideMenu hidden" aria-hidden="true">
+    <div class="sideTop">
+      <div class="sideBrand">
+        <img class="sideLogo" src="images/zex.png" alt="Zex7"/>
+        <div>
+          <div class="sideTitle">Zex7 Store</div>
+          <div class="sideSub">Digital Store</div>
+        </div>
+      </div>
+      <button id="btnCloseMenu" class="iconBtn" aria-label="إغلاق">✕</button>
+    </div>
+
+    <nav class="sideNav">
+      <button class="sideLink" data-nav="home">🏠 الصفحة الرئيسية</button>
+      <button class="sideLink" data-nav="history">🕘 السجل</button>
+      <button class="sideLink" data-nav="favorites">❤️ مفضلة</button>
+      <a id="sideWhats" class="sideLink sideLinkA" href="#" target="_blank" rel="noopener">
+        <img class="sideIcon" src="images/wats.png" alt="واتساب"/> واتساب
+      </a>
+      <a id="sideInsta" class="sideLink sideLinkA" href="#" target="_blank" rel="noopener">
+        <img class="sideIcon" src="images/instagram.png" alt="انستغرام"/> انستغرام
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="topbar">
+    <button id="btnMenu" class="iconBtn" aria-label="القائمة">☰</button>
+
+    <div class="brand">
+      <img class="brandLogo" src="images/zex.png" alt="Zex7"/>
+      <div class="brandText">
+        <div class="brandName">Zex7 Store</div>
+        <div class="brandWelcome">مرحبا بك في وجهتك الأولى للشحن — هيا ابدأ!</div>
+      </div>
+    </div>
+
+    <button id="btnHome" class="pillBtn">الرئيسية</button>
+  </header>
+
+  <!-- Search / Filter -->
+  <section class="searchRow">
+    <div class="filterWrap">
+      <select id="filterSelect" class="select">
+        <option value="all">الكل</option>
+        <option value="games">شحن الألعاب</option>
+        <option value="giftcards">بطاقات هدايا</option>
+        <option value="subs">اشتراكات تطبيقات</option>
+        <option value="videogames">ألعاب الفيديو</option>
+      </select>
+    </div>
+
+    <input id="searchInput" class="search" type="search" placeholder="ابحث عن منتج أو قسم..." autocomplete="off"/>
+  </section>
+
+  <!-- Views -->
+  <main class="container">
+
+    <!-- HOME -->
+    <section id="viewHome">
+      <div class="head">
+        <h2>الأقسام</h2>
+        <p>اختر قسم للدخول</p>
+      </div>
+      <div id="homeGrid" class="grid"></div>
+      <div id="homeEmpty" class="empty hidden">لا توجد نتائج.</div>
+    </section>
+
+    <!-- CATEGORY -->
+    <section id="viewCategory" class="hidden">
+      <div class="head headRow">
+        <div>
+          <h2 id="categoryTitle">القسم</h2>
+          <p id="categorySub">اختر قسم للدخول</p>
+        </div>
+        <button id="btnBackCat" class="ghostBtn">رجوع</button>
+      </div>
+      <div id="categoryGrid" class="grid"></div>
+      <div id="categoryEmpty" class="empty hidden">لا توجد نتائج.</div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="viewProducts" class="hidden">
+      <div class="head headRow">
+        <div>
+          <h2 id="productsTitle">المنتجات</h2>
+          <p id="productsSub">اختر العرض المناسب</p>
+        </div>
+        <button id="btnBackProducts" class="ghostBtn">رجوع</button>
+      </div>
+
+      <div class="metaRow">
+        <div id="productsCount" class="count">0 منتج</div>
+      </div>
+
+      <div id="productsGrid" class="grid"></div>
+      <div id="productsEmpty" class="empty hidden">لا توجد نتائج.</div>
+    </section>
+
+    <!-- FAVORITES -->
+    <section id="viewFavorites" class="hidden">
+      <div class="head headRow">
+        <div>
+          <h2>المفضلة</h2>
+          <p>العناصر التي حفظتها</p>
+        </div>
+        <button id="btnBackFav" class="ghostBtn">رجوع</button>
+      </div>
+      <div id="favoritesGrid" class="grid"></div>
+      <div id="favEmpty" class="empty hidden">لا توجد عناصر في المفضلة.</div>
+    </section>
+
+    <!-- HISTORY -->
+    <section id="viewHistory" class="hidden">
+      <div class="head headRow">
+        <div>
+          <h2>السجل</h2>
+          <p>آخر عناصر قمت بفتحها</p>
+        </div>
+        <button id="btnBackHis" class="ghostBtn">رجوع</button>
+      </div>
+
+      <div id="historyList" class="history"></div>
+      <div id="hisEmpty" class="empty hidden">السجل فارغ.</div>
+    </section>
+
+  </main>
+
+  <!-- Toast -->
+  <div id="toastWrap" class="toastWrap"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
